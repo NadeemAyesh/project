@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .big-img {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            margin: 0 0 20px 0;
+        }
+
+        .big-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbs {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .thumbs li {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .thumbs li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .accourdion-body {
+            background-color: #FFF;
+            padding: 15px;
+            border: 1px solid #CCC;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--     <figure class="big-img">
+        <img src="" alt="" name="bigimg" />
+    </figure>
+
+    <ul class="thumbs">
+        <li><img src="bgs/CM-Punk-cm-punk-14704644-1152-864.jpg" alt="" name="img1" onclick="bigimg.src = img1.src" /></li>
+        <li><img src="bgs/umhv14bujsj81.jpg" alt="" name="img2" onclick="bigimg.src = img2.src" /></li>
+        <li><img src="bgs/umhv14bujsj81.webp" alt="" /></li>
+        <li><img src="bgs/maxresdefault.jpg" alt="" /></li>
+    </ul> -->
+
+    <div class="accourdion">
+        <article class="accoudion-item">
+            <button type="button" data-target="#acc1" class="open-acc">Click to open</button>
+
+            <div class="accourdion-body" id="acc1">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, consectetur aperiam illum tempora ab, quae consequuntur illo earum consequatur nihil officia! Distinctio iusto quidem possimus blanditiis dolore et esse aliquam?</p>
+            </div>
+        </article>
+        <article class="accoudion-item">
+            <button type="button" data-target="#acc2" class="open-acc">Click to open</button>
+
+            <div class="accourdion-body" id="acc2">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, consectetur aperiam illum tempora ab, quae consequuntur illo earum consequatur nihil officia! Distinctio iusto quidem possimus blanditiis dolore et esse aliquam?</p>
+            </div>
+        </article>
+    </div>
+    
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+            $('.open-acc').on('click', () => {
+
+                var target = $(this).attr('data-target');
+                $(this).parent().siblings().find('.accourdion-body').slideUp();;
+                // var target = $(this).data('target');
+                $(target).slideToggle();
+
+            })
+
+
+        })
+    </script>
+</body>
+</html>
